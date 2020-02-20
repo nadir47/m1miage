@@ -1,7 +1,6 @@
 package writers;
 
 import Launcher.MainPg;
-import readers.document_reader.DocumentReader;
 
 public class WriterFactory {
 	public static Writer getDocumentWriter(String type,String path) throws Exception {
