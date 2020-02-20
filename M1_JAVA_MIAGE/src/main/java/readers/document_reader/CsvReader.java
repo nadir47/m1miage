@@ -1,4 +1,4 @@
-package CsvReader;
+package readers.document_reader;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,19 +10,21 @@ import java.util.ArrayList;
  * Class responsable de la lecture des fichiers CSV
  *
  */
-public class CsvReader {
+ class CsvReader extends DocumentReader{
 	//CHANGE EXCEPTION TYPE
-	BufferedReader csvReader;
+	
 	int iter=1;
-	String path;
 	String separator;
-	public boolean containsData=true;
 	public CsvReader(String pathToCsv,String Separator) throws Exception {
 		this.path=pathToCsv;
 		this.separator = Separator;
 		
 	}
-
+	/**
+	 * If we want to read all the file and load it to RAM
+	 * @return
+	 * @throws IOException
+	 */
 	public ArrayList<String[]> readAllFile() throws IOException {
 		csvReader = new BufferedReader(new FileReader(this.path));
 		ArrayList<String[]> allData = new ArrayList<String[]>();;
@@ -35,6 +37,12 @@ public class CsvReader {
 		return allData;
 
 	}
+	/**
+	 * LOAD SPECIFIC NUBER OF LINE
+	 * @param nb
+	 * @return
+	 * @throws IOException
+	 */
 	public ArrayList<String[]> readMultipleLine(int nb) throws IOException {
 		csvReader = new BufferedReader(new FileReader(this.path));
 		ArrayList<String[]> allData = new ArrayList<String[]>();
@@ -56,5 +64,6 @@ public class CsvReader {
 		csvReader.close();
 		return allData;
 	}
+
 }
 

@@ -1,4 +1,4 @@
-package MetaData;
+package meta_data;
 
 import java.util.ArrayList;
 

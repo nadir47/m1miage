@@ -2,7 +2,6 @@ package Anonymisation;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
 import org.junit.Test;
 
 public class TestAnonymisation {
@@ -12,7 +11,7 @@ public class TestAnonymisation {
 	public void testDifferentStringsRLStrategy() {
 		String str = "LE GUEN";
 		// IAnonymisation testRandomStrat = new RANDOM_LETTER_STRATEGY();
-		assertNotEquals(str, Anonymisation.anonymiseFull(str));
+		assertNotEquals(str, AllAnonymisationRules.anonymiseFull(str));
 		//assertNo
 	
 	}
@@ -21,19 +20,19 @@ public class TestAnonymisation {
 	public void testSameSizeRLStrategy() {
 		String str = "LE GUEN";
 
-		assertEquals(str.length(), Anonymisation.anonymiseFull(str).length());
+		assertEquals(str.length(), AllAnonymisationRules.anonymiseFull(str).length());
 	}
 
 	@Test
 	public void testDifferentStringsRLLocalPartStrategy() {
 		String str = "yannis.le-guen@hotmail.fr";
-	 assertNotEquals(str, Anonymisation.anonymiseForLocalPart(str));
+	 assertNotEquals(str, AllAnonymisationRules.anonymiseForLocalPart(str));
 	}
 
 	@Test
 	public void testSameSizeRLLocalStrategy() {
 		String str = "yannis.le-guen@hotmail.fr";
-		assertEquals(str.length(), Anonymisation.anonymiseForLocalPart(str).length());
+		assertEquals(str.length(), AllAnonymisationRules.anonymiseForLocalPart(str).length());
 
 	}
 

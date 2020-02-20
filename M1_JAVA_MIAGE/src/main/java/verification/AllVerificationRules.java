@@ -1,13 +1,13 @@
-package Rules;
+package verification;
 
-public class AllRules {
+public class AllVerificationRules {
 
 	public static boolean checkIfNumber(String str) {
 
 		try {
-			Double.parseDouble(str.trim());
+			Integer.parseInt(str);
 		}
-		catch(NumberFormatException e)
+		catch(Exception e)
 		{	
 			return false;
 		}

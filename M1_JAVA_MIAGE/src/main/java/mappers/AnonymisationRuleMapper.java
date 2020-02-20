@@ -1,8 +1,9 @@
-package MetaData;
+package mappers;
 
-import Rules.AllAnonymisations;
+import Anonymisation.AllAnonymisationRules;
+import meta_data.LineMetaData;
 
-public class AnonymisationMapper {
+public class AnonymisationRuleMapper {
 	
 	public static String doMap(String type,String toAnon) {
 		if (type==null){
@@ -10,18 +11,16 @@ public class AnonymisationMapper {
 		}
 		switch(type) {
 		case "RANDOM_LETTER":
-			return AllAnonymisations.anonymiseFull(toAnon);
+			return AllAnonymisationRules.anonymiseFull(toAnon);
 		case "RANDOM_LETTER_FOR_LOCAL_PART":
-			return AllAnonymisations.anonymiseForLocalPart(toAnon);
+			return AllAnonymisationRules.anonymiseForLocalPart(toAnon);
 		default :
 			return toAnon;
 		}
 	}
 	public static String[] lineAnonymisation(LineMetaData lineRef,String[] line) {
-		boolean temp=true;
 		for(int i=0;i<line.length;i++)
 		{	
-		 	//System.out.println(lineRef.get(i).name);
 			line[i]=doMap(lineRef.get(i).AnonymisationType,line[i]);
 		}
 		return line;

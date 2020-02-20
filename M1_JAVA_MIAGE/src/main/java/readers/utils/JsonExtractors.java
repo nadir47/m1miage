@@ -1,9 +1,9 @@
-package JsonParse;
+package readers.utils;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import MetaData.Column;
+import meta_data.Column;
 /**
  * 
  * Contains all functions that help us to extract String from JSon Object
@@ -18,7 +18,7 @@ public class JsonExtractors {
 	}
 	public static void parseRuleObject(Column tempCOl,JSONObject jsonObject,String ruleName) 
 	{
-		extractRuleFromJsObject(tempCOl,jsonObject,ruleName);	
+		extractVerificationRuleFromJsObject(tempCOl,jsonObject,ruleName);	
 	}
 	//
 
@@ -28,9 +28,7 @@ public class JsonExtractors {
 	public static String extractByNameFromJsObject(String str,JSONObject jsonObject) {
 		return (String) jsonObject.get(str);
 	}
-	public static void extractRuleFromJsObject(Column tempCOl,JSONObject jsonObject,String ruleName) {
-		tempCOl.setName(extractNameFromJsObject(jsonObject));
-		//Get employee last name
+	public static void extractVerificationRuleFromJsObject(Column tempCOl,JSONObject jsonObject,String ruleName) {
 		Object ruleObject = jsonObject.get(ruleName);
 		String ruleType = ruleObject.getClass()
 				.getSimpleName()
@@ -45,7 +43,12 @@ public class JsonExtractors {
 			tempCOl.setRule(ruleObject.toString());
 		}
 	}
-	//rename this please !
+	public static String extractAnonymisationRuleFromJsObject(JSONObject jsonObject,String ruleName) {
+		//Get employee last name
+		Object ruleObject = jsonObject.get(ruleName);
+		return ruleObject.toString();
+	}
+	
 	public static void extractNameAndTypeFromJsObj(Column tempCOl,JSONObject jsonObject,String ruleName) {  
 		tempCOl.setName(extractNameFromJsObject(jsonObject));
 		//Get employee last name

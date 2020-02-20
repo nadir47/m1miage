@@ -1,8 +1,8 @@
-package Rules;
+package Anonymisation;
 
 import java.util.Random;
 
-public class AllAnonymisations {
+public class AllAnonymisationRules {
 	
 	private static final String alphabet = "abcdefghijklmnopqrstuvwxy";
 	

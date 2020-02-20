@@ -1,5 +1,8 @@
-package MetaData;
+package meta_data;
 import java.util.ArrayList;
+
+import mappers.DescTypeMapper;
+import mappers.VerificationRuleMapper;
 
 
 public class Column {
@@ -13,17 +16,20 @@ public class Column {
 	public Column() {
 		
 	}
-	public boolean DoAllCHeck(String toCHeck) {
+	public boolean doAllCHeck(String toCHeck) {
 		boolean temp =true;
 		if (!withCheck) {
 			return true;
 		}
 		for(String rule : Rules) {
-			temp=temp&&RuleMapper.doMap(rule,toCHeck);
+			temp=temp&&VerificationRuleMapper.doMap(rule,toCHeck);
 		}
 		return temp;
 	}
-	
+	public boolean doDescCHeck(String toCheckDesc) {
+		// TODO Auto-generated method stub
+		return DescTypeMapper.doMap(this.type,toCheckDesc);
+	}
 
 	
 	public String getName() {
@@ -57,4 +63,5 @@ public class Column {
 	public void setAnonymisationType(String anonymisationType) {
 		AnonymisationType = anonymisationType;
 	}
+	
 }
