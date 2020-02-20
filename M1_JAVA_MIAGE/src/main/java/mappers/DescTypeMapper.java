@@ -20,7 +20,6 @@ public class DescTypeMapper {
 		{
 			temp=temp&&lineRef.get(i).doDescCHeck(line[i]);
 		}
-		if (!temp) System.out.println(temp);
 		return temp;
 	}
 }
