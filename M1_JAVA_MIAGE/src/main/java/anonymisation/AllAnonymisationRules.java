@@ -1,4 +1,4 @@
-package Anonymisation;
+package anonymisation;
 
 import java.util.Random;
 

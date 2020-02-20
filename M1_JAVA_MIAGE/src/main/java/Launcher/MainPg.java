@@ -1,6 +1,6 @@
 package Launcher;
 
-import Anonymisation.Anonymisation;
+import anonymisation.Anonymisation;
 import verification.Verification;
 
 public class MainPg {

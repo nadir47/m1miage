@@ -3,6 +3,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+
+import IO_handling_utils.StringUtils;
 /**
  * 
  * @author Nad Desktop
@@ -33,7 +35,7 @@ class CsvWriter extends Writer{
 		BufferedWriter bw;
 		bw = new BufferedWriter(writer);
 		for(String[] line: beforWrite) {
-			bw.write(Utils.arrayToStr(line,this.separator));
+			bw.write(StringUtils.arrayToStr(line,this.separator));
 		}
 		bw.close();
 		writer.close();

@@ -8,9 +8,9 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import IO_handling_utils.JsonExtractors;
 import meta_data.Column;
 import meta_data.LineMetaData;
-import readers.utils.JsonExtractors;
 /**
  * TO DO :
  * Create new Structure

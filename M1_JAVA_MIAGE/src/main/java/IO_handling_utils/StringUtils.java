@@ -1,6 +1,6 @@
-package writers;
+package IO_handling_utils;
 
-public class Utils {
+public class StringUtils {
 	public static String arrayToStr(String[] data,String joinChar) {
 		StringBuilder str = new StringBuilder("");
 		int size= data.length;

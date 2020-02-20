@@ -1,4 +1,4 @@
-package readers.utils;
+package IO_handling_utils;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

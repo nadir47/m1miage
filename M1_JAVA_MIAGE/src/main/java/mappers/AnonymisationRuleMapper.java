@@ -1,6 +1,6 @@
 package mappers;
 
-import Anonymisation.AllAnonymisationRules;
+import anonymisation.AllAnonymisationRules;
 import meta_data.LineMetaData;
 
 public class AnonymisationRuleMapper {
