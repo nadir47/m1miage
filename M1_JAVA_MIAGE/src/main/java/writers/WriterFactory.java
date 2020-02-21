@@ -24,11 +24,14 @@ public class WriterFactory {
 			return null;
 		}
 		switch(type) {
+		//We should add an upper case onto type String value --> Could limit confusions.
 		case "CSV":
 			return new CsvWriter(path,MainPg.InSeparator);
 		default :
 			return null;
 		}
 	}
+	
+	
 
 }

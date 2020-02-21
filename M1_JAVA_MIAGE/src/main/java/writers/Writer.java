@@ -16,6 +16,7 @@ public abstract class Writer {
 	
 	/** Write a String tab into a file
 	 *@param String tab giving the String we want to write
+	 *@throws IOException
 	 */
 	public abstract void writeFileFromList(List<String[]> beforWrite) throws IOException;
 }
