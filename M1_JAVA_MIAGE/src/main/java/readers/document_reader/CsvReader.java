@@ -6,8 +6,10 @@ import java.util.ArrayList;
 
 /**
  * 
- *
  * Class responsable de la lecture des fichiers CSV
+ * @version 1.0
+ * @author Nadir Omega
+ * @author ylgn
  *
  */
  class CsvReader extends DocumentReader{
@@ -21,8 +23,8 @@ import java.util.ArrayList;
 		
 	}
 	/**
-	 * If we want to read all the file and load it to RAM
-	 * @return
+	 * Return a all the file contained into a given file
+	 * @return An ArrayList of String [] with all the data kept in it.
 	 * @throws IOException
 	 */
 	public ArrayList<String[]> readAllFile() throws IOException {
@@ -38,9 +40,9 @@ import java.util.ArrayList;
 
 	}
 	/**
-	 * LOAD SPECIFIC NUBER OF LINE
-	 * @param nb
-	 * @return
+	 * Return several records from n line contained into a given file
+	 * @param Int giving the number of line to read
+	 * @return An ArrayList of String [] with all the data kept in it.
 	 * @throws IOException
 	 */
 	public ArrayList<String[]> readMultipleLine(int nb) throws IOException {
