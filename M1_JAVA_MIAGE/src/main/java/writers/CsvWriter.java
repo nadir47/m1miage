@@ -23,6 +23,11 @@ class CsvWriter extends Writer{
 	}
 
 
+	/** Write a String tab into a CSV file
+	 * It calls StringUtils to get full a String with the requested separator 
+	 *@param String tab giving the String we want to write
+	 *@throws IOException
+	 */
 	public void writeFileFromList(List<String[]> beforWrite) throws IOException {
 		FileWriter writer;
 		if (iter==1) {
