@@ -40,8 +40,8 @@ import java.util.ArrayList;
 
 	}
 	/**
-	 * Return several records from n line contained into a given file
-	 * @param Int giving the number of line to read
+	 * Return n  into a given file
+	 * @param Int giving the number of records to read
 	 * @return An ArrayList of String [] with all the data kept in it.
 	 * @throws IOException
 	 */
