@@ -1,11 +1,24 @@
 package anonymisation;
 
 import java.util.Random;
-
+/**
+ * Class relative to Anonymisation rules. Here is all method use to verify a
+ * given string
+ * 
+ * @version 1.0
+ * @author Nadir Omega
+ * @author ylgn
+ */
 public class AllAnonymisationRules {
 	
 	private static final String alphabet = "abcdefghijklmnopqrstuvwxy";
 	
+	/**
+	 * Return an e-mail encrypted with all char before the @
+	 * 
+	 * @param String giving the e-mail
+	 * @return String that contains the anonymised partial address
+	 */
 	public static String anonymiseForLocalPart(String str) {
 		String anonymisedString = "";
 		Random r = new Random();
@@ -23,9 +36,11 @@ public class AllAnonymisationRules {
 	}
 	
 	/**
-	  * @param Str, un string re présentant un nom
-	  * @return un string dont chaque lettre est remplacée par une autre lettre aléatoire
-	*/
+	 * Return a String encrypted entirely
+	 * 
+	 * @param String giving the data to encrypt
+	 * @return String that contains the anonymised string
+	 */
 	public static String anonymiseFull(String str) {
 		String anonymisedString = "";
 		Random r = new Random();

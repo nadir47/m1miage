@@ -14,7 +14,13 @@ import readers.document_reader.DocumentReader;
 import readers.document_reader.DocumentReaderFactory;
 import writers.Writer;
 import writers.WriterFactory;
-
+/**
+ * Class relative to Anonymisation process
+ * 
+ * @version 1.0
+ * @author Nadir Omega
+ * @author ylgn
+ */
 public class Anonymisation {
 	String in,out,descFilePath,anonFilePath;
 	String separatorIn=";";
@@ -26,6 +32,14 @@ public class Anonymisation {
 		this.descFilePath = descFilePath;
 		this.anonFilePath = anonFilePath;
 	}
+	/**
+	 * Run the anonymisation process. First of all, there is an initialisation phase
+	 * with initialisation of the LineMetaData (list of column). Then, as long as it
+	 * will have data to read the program call several method from package mapper in
+	 * order to call method from anonymisation.
+	 * 
+	 * @exception Exception
+	 */
 	public void doAnonymisation() throws Exception {
 		DocumentReader csvReader =  DocumentReaderFactory.getDocumentReader("CSV",this.in);
 		Writer csvWriter = WriterFactory.getDocumentWriter("CSV", out);
